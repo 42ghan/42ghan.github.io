@@ -1,25 +1,33 @@
 baseURL: "https://42ghan.github.io/"
-title: ExampleSite
+title: Code to Communicate 
 paginate: 5
 theme: PaperMod
 
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
 
 googleAnalytics: UA-123-45
 
 minify:
     disableXML: true
-    minifyOutput: true
+    # minifyOutput: true
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
 
 params:
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    title: ExampleSite
-    description: "ExampleSite description"
-    keywords: [Blog, Portfolio, PaperMod]
-    author: Me
+    title: Code to Communicate
+    description: "Code to Communicate, Daniel Han's Dev Note"
+    keywords: [Blog, Portfolio, PaperMod, 42seoul, 42 Seoul, 42Seoul, development, C programming, Linux]
+    author: Daniel Han
     # author: ["Me", "You"] # multiple authors
     images: ["<link or path of image for opengraph, twitter-cards>"]
     DateFormat: "January 2, 2006"
@@ -48,81 +56,85 @@ params:
         apple_touch_icon: "<link / abs url>"
         safari_pinned_tab: "<link / abs url>"
 
-    label:
-        text: "Home"
-        icon: /apple-touch-icon.png
-        iconHeight: 35
+    # label:
+    #     text: "Dev Note by ghan"
+        # icon: /apple-touch-icon.png
+        # iconHeight: 35
 
     # profile-mode
     profileMode:
         enabled: false # needs to be explicitly set
-        title: ExampleSite
-        subtitle: "This is subtitle"
-        imageUrl: "<img location>"
-        imageWidth: 120
-        imageHeight: 120
-        imageTitle: my image
+        title: Dev Note by ghan
+        # subtitle: "This is subtitle"
+        # imageUrl: "<img location>"
+        # imageWidth: 120
+        # imageHeight: 120
+        # imageTitle: my image
         buttons:
-            - name: Posts
-              url: posts
+            - name: Archives
+              url: archives
             - name: Tags
               url: tags
 
     # home-info mode
     homeInfoParams:
-        Title: "Hi there \U0001F44B"
-        Content: Welcome to my blog
+        Title: "Code to Communicate 🧑🏻‍💻"
+        Content: >
+            Hello from Korea 👋
+            
+            - My name is Daniel Han. I am studying at [**42 Seoul**](https://42seoul.kr/en/seoul42/default.html) how to communicate with computers by 1's and 0's, in order to communicate better with others.
+
+            - This blog is where I share my study notes, projects, inspirations, etc.
 
     socialIcons:
-        - name: twitter
-          url: "https://twitter.com/"
-        - name: stackoverflow
-          url: "https://stackoverflow.com"
         - name: github
-          url: "https://github.com/"
+          url: "https://github.com/42ghan"
+        - name: email
+          url: "mailto:ghan@student.42seoul.kr"
 
     analytics:
         google:
             SiteVerificationTag: "XYZabc"
-        bing:
-            SiteVerificationTag: "XYZabc"
-        yandex:
-            SiteVerificationTag: "XYZabc"
 
-    cover:
-        hidden: true # hide everywhere but not in structured data
-        hiddenInList: true # hide on list pages and home
-        hiddenInSingle: true # hide on single page
+    # cover:
+    #     hidden: true # hide everywhere but not in structured data
+    #     hiddenInList: true # hide on list pages and home
+    #     hiddenInSingle: true # hide on single page
 
     editPost:
-        URL: "https://github.com/<path_to_repo>/content"
+        URL: "https://github.com/42ghan.github.io/content/posts"
         Text: "Suggest Changes" # edit text
         appendFilePath: true # to append file path to Edit link
 
     # for search
     # https://fusejs.io/api/options.html
-    fuseOpts:
-        isCaseSensitive: false
-        shouldSort: true
-        location: 0
-        distance: 1000
-        threshold: 0.4
-        minMatchCharLength: 0
-        keys: ["title", "permalink", "summary", "content"]
+    # fuseOpts:
+    #     isCaseSensitive: false
+    #     shouldSort: true
+    #     location: 0
+    #     distance: 1000
+    #     threshold: 0.4
+    #     minMatchCharLength: 0
+    #     keys: ["title", "permalink", "summary", "content"]
+taxonomies:
+    category: categories
+    tag: tags
+    series: series
+
 menu:
     main:
-        - identifier: categories
-          name: categories
-          url: /categories/
+        - name: Archive
+          url: archives/
+          weight: 5
+        - name: Search
+          url: search/
           weight: 10
-        - identifier: tags
-          name: tags
-          url: /tags/
-          weight: 20
-        - identifier: example
-          name: example.org
-          url: 42ghan.github.io
-          weight: 30
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: Categories
+          url: categories/
+          weight: 10
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 # pygmentsUseClasses: true
 # markup:
