@@ -1,5 +1,5 @@
-baseURL: "42ghan.github.io"
-# url: 42ghan.github.io
+domain: 42ghan.github.io
+url: https://42ghan.github.io
 title: ExampleSite
 paginate: 5
 theme: PaperMod
