@@ -1,4 +1,4 @@
-baseURL: 42ghan.github.io
+baseURL: "42ghan.github.io"
 # url: 42ghan.github.io
 title: ExampleSite
 paginate: 5
