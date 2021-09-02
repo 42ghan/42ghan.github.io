@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://42ghan.github.io/sitemap.xml
